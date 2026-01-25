@@ -12,7 +12,7 @@ Base.metadata.create_all(bind=engine)
 def health():
     return{"status": "ok"} 
 
-@app.get("/pokemon")
+@app.post("/pokemon")
 def create_pokemon(name: str, db: Session = Depends(get_db)): #give me a database connection for this request
     pokemon = Pokemon(name=name) #creates python object
     db.add(pokemon)
