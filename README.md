@@ -94,7 +94,8 @@ Provides aggregated insights from the local database.
 
 How to Run Locally
 1. Clone the repository
-git clone https://github.com/ellismainwaring/pokedex-ops.git
+
+git clone https://github.com/EllisMainwaring/pokedex-ops.git
 cd pokedex-ops
 
 2. Create and activate a virtual environment
