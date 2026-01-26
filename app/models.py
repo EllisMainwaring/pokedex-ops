@@ -1,8 +1,6 @@
-from sqlalchemy import Column, Integer, String
-from .database import Base 
-
 from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from .database import Base
+from sqlalchemy.orm import relationship
 
 pokemon_types = Table(
     "pokemon_types",
@@ -27,9 +25,14 @@ class Pokemon(Base):
     special_defense = Column(Integer, nullable=True)
     speed = Column(Integer, nullable=True)
 
+    types = relationship("Type", secondary=pokemon_types, back_populates="pokemon")
+
+
 
 class Type(Base):
     __tablename__ = "types"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True, index=True, nullable=False)
+
+    pokemon = relationship("Pokemon", secondary=pokemon_types, back_populates="types")
