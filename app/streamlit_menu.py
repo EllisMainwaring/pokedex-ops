@@ -22,7 +22,7 @@ def api_post(base_url: str, path: str, params: dict | None = None):
 
 #API base URL input
 api_base = st.text_input("FastAPI base URL", value=DEFAULT_API_BASE, help="Make sure uvicorn is running first.")
-st.caption("Tip: open your FastAPI docs at " + api_base.rstrip("/") + "/docs")
+st.caption("Tip: open FastAPI docs at " + api_base.rstrip("/") + "/docs")
 
 #Health check
 with st.expander("Health check (Do I even work at the moment?)", expanded=True):
