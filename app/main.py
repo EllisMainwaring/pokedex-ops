@@ -122,7 +122,7 @@ def sync_pokemon_batch(
 def sync_pokemon(pokemon_id: int, db: Session = Depends(get_db)):
     data = fetch_pokemon(pokemon_id)
 
-    #Stats come as a list of entries. turn it into a simple dict.
+    #Stats come as a list of entries. We turn it into a simple dict.
     stats_map = {s["stat"]["name"]: s["base_stat"] for s in data["stats"]}
 
     #Types come as a list too
